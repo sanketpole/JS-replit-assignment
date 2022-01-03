@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    // function threeSum(arr, target) {
+    //     //your code here
+
+    //     let len = arr.length
+    //     let ClosestSum = 10000000
+
+    //     for(let i=0;i<len-2;i++){
+    //         for(let j=i+1;j<len-1;j++){
+    //             for(let k=j+1;k<len;k++){
+    //                 let currSum = arr[i]+arr[j]+arr[k];
+
+    //                 if(Math.abs(currSum-target)<Math.abs(ClosestSum-target)){       //abs = absolute
+    //                     ClosestSum = currSum
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return ClosestSum
+    // }
+    // //target = 1
+    // //arr = -1,2,1  
+    // console.log(threeSum([-1,2,1,4],1))
+
+    function threeSum(arr, target){
+
+        let len = arr.length
+        let ClosestSum = 10000000;
+        for(i=0;i<=len-3;i++){
+            let left = i+1;
+            let right = len-1;
+
+        while(left<right){
+            let currSum = arr[i]+arr[left]+arr[right]
+
+            if(Math.abs(currSum-target)<Math.abs(currSum-target))
+                ClosestSum = currSum
+
+            if(currSum>target)
+                right--
+            else
+                left++
+            }
+        }
+        return ClosestSum
+    }
+    let arr = [1,2,3,4,-5]
+    let target = 10
+    console.log(threeSum(arr,target))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

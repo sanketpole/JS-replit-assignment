@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function palindrome(str){
+            //your code here1!
+            str = str.toLowerCase() 
+            //first method
+            //check 1st and last char , check 2nd and and last char and so on
+
+            let len = str.length;
+            //for(statement 1, statement 2 , statement 3)
+            // statement 1:- Initailization
+            // statement 1:- condition
+            // statement 1:- increment
+
+            for(let index = 0;index<len/2;index++){
+                if(str[index]!==str[len-1-index]){
+                    return false;
+                }
+                
+            }
+            return true;
+            //code end. don't edit anything below
+        }
+        console.log(palindrome('Naman'))
+        console.log(palindrome('sanket'))
+        console.log(palindrome('abcdedcba'))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
